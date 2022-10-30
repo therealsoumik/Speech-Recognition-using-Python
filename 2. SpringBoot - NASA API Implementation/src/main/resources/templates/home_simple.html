@@ -1,0 +1,59 @@
+<html>
+
+<body>
+<h1>APOD</h1>
+<h2>Picture of Day</h2>
+
+<div th:object="${apodResponse}">
+
+<h4>Title: <td th:text="${apodResponse.apodTitle}"></td>
+</h4>
+
+<h4>Description: <td th:text="${apodResponse.apodExplation}"></h4>
+<h4>Image: <td th:text="${apodResponse.apodHdUrl}"></h4>
+
+<img th:src="${apodResponse.apodHdUrl}" class="img-fluid" alt="Image" style="width: 40%; height: 40%;">
+</div>
+
+<h1>----------------------------------------------------------------------</h1>
+<h1>MARS ROVER PHOTOS</h1>
+
+ <table id="TableData" style="margin-bottom: 20px;">
+                                                    <thead class="ui-table-thead">
+                                                        <tr class="ng-star-inserted">
+                                                            <th scope="col" class="ui-sortable-column ng-star-inserted">SOL</th>
+                                                            <th scope="col" class="ui-sortable-column ng-star-inserted">Image</th>
+                                                            <th scope="col" class="ui-sortable-column ng-star-inserted">EarthDate</th>
+                                                            <th scope="col" class="ui-sortable-column ng-star-inserted">CameraName</th>
+                                                            <th scope="col" class="ui-sortable-column ng-star-inserted">RoverName</th>
+                                                            <th scope="col" class="ui-sortable-column ng-star-inserted">LandingDate</th>
+                                                          
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody class="ui-table-tbody" id="tablerows">
+                                                        <tr th:each="photovalueiter : ${marsRoverPhotos}">
+                                                            <td th:text="${photovalueiter.sol}">SOL</td>
+                                                            <td><img th:src="${photovalueiter.img_src}" class="img-fluid" alt="Image" style="width: 40%; height: 40%;">Image</td>
+                                                            <td th:text="${photovalueiter.earth_date}">EarthDate</td>
+                                                            <td th:text="${photovalueiter.marsRoverCamera.fullName}">CameraName</td>
+                                                            <td th:text="${photovalueiter.marsRoverInfo.name}">RoverName</td>
+                                                            <td th:text="${photovalueiter.marsRoverInfo.landing_date}">LandingDate</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                
+                                                
+<h1>----------------------------------------------------------------------</h1>
+<h1>TECHPORT INFO</h1>
+
+<h3>Title: <td th:text="${techPortValue.title}"></h3>
+<h3>Description: <td th:text="${techPortValue.description}"></h3>
+<h3>Benefits: <td th:text="${techPortValue.benefits}"></h3>
+<h3>Year: <td th:text="${techPortValue.startYear}"></h3>
+
+</div>
+
+</body>
+
+</html>

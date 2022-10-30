@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Nasa API</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Venkatesh Mudaliar</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/venkatesh-mudaliar/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://twitter.com/venkymudaliar" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <!--<a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>-->
+          <a href="https://www.instagram.com/venkymudaliar/" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.youtube.com/channel/UC3sUVWATTZZgR8qi_JhR2ug" class="google-plus"><i class="bx bxl-youtube"></i></a>
+          
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><!--<i class="bx bx-home"></i>--> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><!--<i class="bx bx-user"></i>--> <span>Astronomical Picture of Day</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><span>MARS Rover Photos</span></a></li>
+          <li><a href="#services" class="nav-link scrollto"><span>Techport</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><span>API Project Info</span></a></li>
+          <!--<li><a href="#resume" class="nav-link scrollto"><span>Resume</span></a></li>-->
+          
+          <!--
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          -->
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Venkatesh Mudaliar</h1>
+      <p>Programming Enthusiast</p>
+      <!--
+      <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+      -->
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Astronomy Picture of the Day</h2>
+          <p>One of the most popular websites at NASA is the Astronomy Picture of the Day.  This endpoint structures the APOD imagery and associated metadata so that it can be repurposed for other applications. In addition, if the concept_tags parameter is set to True, then keywords derived from the image explanation are returned. These keywords could be used as auto-generated hashtags for twitter or instagram feeds; but generally help with discoverability of relevant imagery.
+
+           </p>
+        </div>
+
+        <div class="row">
+
+          
+          <div class="col-lg-4" data-aos="fade-right">
+            <!--<img src="assets/img/profile-img.jpg" class="img-fluid" alt="">-->
+            <img th:src="${apodResponse.apodHdUrl}" class="img-fluid" alt="">
+          </div>
+
+
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3 th:text="${apodResponse.apodTitle}"></h3>
+            <p class="fst-italic" th:text="${apodResponse.apodExplation}"></p>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>MARS Rover Photos</h2>
+          <p>This API is designed to collect image data gathered by NASA's Curiosity, Opportunity, and Spirit rovers on Mars and make it more easily available to other developers, educators, and citizen scientists. </p>
+          <br>
+         
+        </div>
+        
+        <div th:each="photovalueiter : ${marsRoverPhotos}" style="border: 1px solid rgba(4, 11, 20, 0.2);margin-top:5px; border-radius: 5px; padding: 10px;">
+        
+        <table style="color: #173B6C; font-weight: bold;">
+        	<tr>
+        		<td>SOL:</td>
+        		<td th:text="${photovalueiter.sol}"></td>
+        	</tr>
+        	<tr>
+        		<td>EarthDate:</td>
+        		<td th:text="${photovalueiter.earth_date}"></td>
+        	</tr>
+        	<tr>
+        		<td>Camera Name:</td>
+        		<td th:text="${photovalueiter.marsRoverCamera.fullName}"></td>
+        	</tr>
+        	<tr>
+        		<td>Rover Name:</td>
+        		<td th:text="${photovalueiter.marsRoverInfo.name}"></td>
+        	</tr>
+        	<tr>
+        		<td>Landing Date:</td>
+        		<td th:text="${photovalueiter.marsRoverInfo.landing_date}"></td>
+        	</tr>
+        	<tr>
+        		<td></td>
+        		<td><img th:src="${photovalueiter.img_src}" class="img-fluid" alt="Image" ></td>
+        	</tr>
+        </table>
+		 
+       	</div>
+       	
+       	<br>
+       	<a href="javascript:window.location.href=window.location.href">
+          <h6 style="color: #173B6C; font-weight: bold;">Refresh the page for new Pictures</h6>
+        </a>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Techport</h2>
+          <p>Welcome to TechPort - NASA's resource for collecting and sharing information about NASA-funded technology development. Techport allows the public to discover the technologies NASA is working on every day to explore space, understand the universe, and improve aeronautics. NASA is developing technologies in areas such as propulsion, nanotechnology, robotics, and human health. NASA is committed to making its data available and machine-readable through an Application Programming Interface (API) to better serve its user communities. As such, the NASA TechPort system provides a RESTful web services API to make technology project data available in a machine-readable format. This API can be used to export TechPort data into either an XML or a JSON format, which can then be further processed and analyzed. </p>
+        </div>
+        
+       
+        <table style="border-collapse: collapse;border: 1px solid rgba(4, 11, 20, 0.2);">
+        <tbody style="padding:10px;">
+        	<tr style="border:1px solid rgba(4, 11, 20, 0.2);">
+        		<td  style="color: #173B6C; font-weight: bold; border:1px solid rgba(4, 11, 20, 0.2); padding:10px;">Title: </td>
+        		<td th:text="${techPortValue.title}"></td>
+        	</tr>
+        	<tr style="border:1px solid rgba(4, 11, 20, 0.2);">
+        		<td  style="color: #173B6C; font-weight: bold; border:1px solid rgba(4, 11, 20, 0.2); padding:10px;">Description: </td>
+        		<td th:text="${techPortValue.description}"></td>
+        	</tr>
+        	<tr style="border:1px solid rgba(4, 11, 20, 0.2);">
+        		<td  style="color: #173B6C; font-weight: bold;border:1px solid rgba(4, 11, 20, 0.2);padding:10px;">Benefits: </td>
+        		<td th:text="${techPortValue.benefits}"></td>
+        	</tr>
+        	<tr style="border:1px solid rgba(4, 11, 20, 0.2);">
+        		<td style="color: #173B6C; font-weight: bold;border:1px solid rgba(4, 11, 20, 0.2);padding:10px;">Year: </td>
+        		<td th:text="${techPortValue.startYear}"></td>
+        	</tr>
+        	</tbody>
+        </table>
+
+
+      </div>
+    </section><!-- End Services Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+          <div class="container">
+    
+            <div class="section-title">
+              <h2>API Project Info</h2>
+              <p>This project utilizes NASA's Open API to retrieve data such as Astronomical Photo of the day, Photos from Mars Rover, and Information about some NASA Projects. This project is designed using SpringBoot and Thymeleaf. </p>
+              <br>
+              <table>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: bold;">Concepts: </td>
+                    <td>SpringBoot, Thymeleaf</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold;">NASA Open API: </td>
+                    <td><a href="https://api.nasa.gov/">https://api.nasa.gov/</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+    
+           
+    
+          </div>
+        </section><!-- End Contact Section -->
+
+    
+
+    <!-- ======= Resume Section ======= -->
+    <!--
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item pb-0">
+              <h4>Venkatesh Mudaliar</h4>
+              <p><em>A Software Developer with a deep inclination towards Machine Learning.</em></p>
+              <ul>
+                <li>+91 9075833468</li>
+                <li>venkymudaliar@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Masters Of Technology - Computer Science</h4>
+              <h5>2017 - 2019</h5>
+              <p><em>SIT- Symbiosis Institute of Technology</em></p>
+              <p>Completed MTech with a CGPA of 7.5. Areas of interest include Machine Learning, Intelligent Systems.</p>
+            </div>
+            <div class="resume-item">
+              <h4>Bachelors - Computer Science</h4>
+              <h5>2012 - 2016</h5>
+              <p><em>Aurora's Engineering College</em></p>
+              <p>Completed BTech with First Class.</p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Software Support Engineer</h4>
+              <h5>Sept 2019 - Present</h5>
+              <p><em>Pune</em></p>
+              <ul>
+                <li>Worked and Developed Multiple Web Application using Springboot.</li>
+                <li>Worked on the Automation of Deployments using Ansible & Jenkins</li>
+                <li>Maintaing the Application Infrastructure and Configurations</li>
+                <li>Worked on Rebranding a Legacy Application to match newer standards.</li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+-->
+
+
+    
+
+    
+
+    
+ 
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        <!--&copy; Copyright <strong><span>iPortfolio</span></strong>-->
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
